@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript validacija</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="container">
+        <div id="wrapper">
+            <form action="register.asp" method="post">
+                <h1><a title="Poništiti unos" href="" onclick="clear();">Registracija</a></h1>
+
+                <p>
+                    <label for="username">Korisničko ime</label>
+                    <input id="username" name="username" type="text" title="Obavezno polje" placeholder="supername" min="3" /> <!--Možemo koristiti:(U prosloj verziji HTMLa trebalo bi napisati required="required", 
+                                                                                                                           sada u HTML5 dovoljno je napisati required) required oninvalid="setCustomValidity('Obavezno polje')"; ali bi morali iskljuciti scriptu. 
+                                                                                                                           Cilj je bio napraviti rucno validaciju da prolazi kroz sva polja-->
+                </p>
+
+                <p>
+                    <label>E-mail</label>
+                    <input id="email" name="email" type="email" placeholder="myemail@gmail.com" required />
+                </p>
+
+                <p>
+                    <label>Lozinka</label>
+                    <input id="password" name="password" type="password" placeholder="eg. Two4One$" />
+                </p>
+
+                <p>
+                    <label>Potvrda lozinke</label>
+                    <input id="password_confirm" name="password_confirm" type="password" placeholder="eg. Two4One$" />
+                </p>
+
+                <p>
+                    <label for="qualifications">Stručna sprema</label>
+                    <select id="qualifications">
+                        <option></option>
+                        <option>SSS</option>
+                        <option>VŠS</option>
+                        <option>VSS</option>
+                    </select>
+                </p>
+                <p class="button right">
+                    <input id="submit" type="submit" value="Sačuvaj" onclick="return validacijaForme()" />
+                </p>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="validation.js"></script>
+</body>
+</html>
